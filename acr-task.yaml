@@ -10,4 +10,4 @@ steps:
       python -m pytest tests/
 
   - push:
-      - "{{.Run.Registry}}/fastapi-crud:{{.Run.ID}}"
+      - "{{.Run.Registry}}/azurecr.io/fastapi-crud:{{.Run.ID}}"
