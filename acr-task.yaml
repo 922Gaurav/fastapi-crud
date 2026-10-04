@@ -8,3 +8,6 @@ steps:
   - cmd: >
       {{.Run.Registry}}/azurecr.io/fastapi-crud:{{.Run.ID}}
       python -m pytest tests/
+
+  - push:
+      - "{{.Run.Registry}}/fastapi-crud:{{.Run.ID}}"
