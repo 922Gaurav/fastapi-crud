@@ -1,0 +1,10 @@
+verrion: v1.1.0
+
+steps:
+  - build: >
+      -t {{.Run.Registry}}/azurecr.io/fastapi-crud:{{.Run.ID}}
+      .
+
+  - cmd: >
+      {{.Run.Registry}}/azurecr.io/fastapi-crud:{{.Run.ID}}
+      python -m pytest tests/

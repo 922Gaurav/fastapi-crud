@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, status
 from pydantic import BaseModel
 from typing import List, Optional
 import logging
@@ -74,7 +74,7 @@ def get_tea(tea_id: int):
     return TeaResponse(status_code = 404, data = [], message = "Tea not found")
 
 # Create a new tea
-@app.post("/teas", response_model = TeaResponse)
+@app.post("/teas", response_model = TeaResponse,  status_code=status.HTTP_201_CREATED)
 def create_tea(tea: Tea):
     try:
         if [existing_tea for existing_tea in teas if existing_tea.name == tea.name and existing_tea.origin == tea.origin]:
