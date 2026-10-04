@@ -52,7 +52,7 @@ teas = [Tea(**tea) for tea in raw_teas]
 # Root endpoint
 @app.get("/")
 def root():
-    return ({"message": "Welcome to the Tea API!"})
+    return ({"message": "Welcome to the Tea API! It is a simple API to manage teas. You can perform CRUD operations on teas using the endpoints provided."})
 
 # Get API Version
 @app.get("/version")
